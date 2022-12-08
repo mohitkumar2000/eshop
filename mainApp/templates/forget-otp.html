@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+<title>Eshop | Forget Password Page</title>
+{% endblock %}
+
+{% block content %}
+<div class="cantainer-fluid mt-3">
+  <div class="row mb-3">
+    <div class="col-md-2 col-1"></div>
+    <div class="col-md-8 col-10"></div>
+    <h4 class="background text-light text-center p-2">Forget Password Section</h4>
+    {% for i in messages %}
+    <div class="alert alert-danger alert-dismissible fade show text-center p-4" role="alert">
+      {{i}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    <form method="post" action="">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label">OTP</label>
+        <input type="number" class="form-control" name="otp"
+          placeholder="Enter OTP whitch Send on Your Registered Email Address">
+      </div>
+      <button type="submit" class="btn background text-light w-100 btn-sm mybtn">Submit OTP</button>
+    </form>
+  </div>
+  <div class="col-md-2 col-1"></div>
+</div>
+</div>
+{% endblock %}
